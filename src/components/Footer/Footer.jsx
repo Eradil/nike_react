@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import './Footer.css'
 import twitter from '../../media/twitter.png'
@@ -62,3 +63,12 @@ const Footer = () => {
 };
 
 export default Footer;
+=======
+import React from "react";
+
+const Footer = () => {
+  return <div>footer</div>;
+};
+
+export default Footer;
+>>>>>>> 1c3b833e174185ba592c6be0da3237e4a60208ac

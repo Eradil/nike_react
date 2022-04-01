@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import './Main.css';
 // import {Button} from 'antd'
@@ -47,3 +48,12 @@ export default Main;
 
 
 
+=======
+import React from "react";
+
+const Main = () => {
+  return <div>main</div>;
+};
+
+export default Main;
+>>>>>>> 1c3b833e174185ba592c6be0da3237e4a60208ac
