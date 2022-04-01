@@ -68,7 +68,7 @@ const Stores = () => {
           <br />
           The concept of the Stone Island stores was created by Marc Buhre, an
           industrial designer from Heidelberg founder of the architecture studio
-          Zeichenweg TM.
+          Zeichenweg TM.!
         </p>
         <div
           style={{
