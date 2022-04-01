@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Admin from "./components/Admin/Admin";
+
+import AdminProduct from "./components/AdminProduct/AdminProduct";
 import Collection from "./components/Collection/Collection";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
@@ -40,7 +41,7 @@ const Routing = () => {
   let ADMIN_ROUTE = [
     {
       link: "/admin",
-      element: <Admin />,
+      element: <AdminProduct />,
       id: 1,
     },
   ];
