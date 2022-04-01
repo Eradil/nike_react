@@ -1,13 +1,11 @@
 import React from "react";
-import Main from "./components/Main/Main";
-import 'antd/dist/antd.css';
-import Footer from "./components/Footer/Footer";
 
+import Routing from "./Routing";
+import "./App.css";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 const App = () => {
-  return <div>
-          <Main/>
-          <Footer/>
-    </div>;
+  return <Routing />;
+
 };
 
 export default App;
