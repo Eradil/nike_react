@@ -1,7 +1,13 @@
 import React from "react";
+import Main from "./components/Main/Main";
+import 'antd/dist/antd.css';
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
-  return <div>root</div>;
+  return <div>
+          <Main/>
+          <Footer/>
+    </div>;
 };
 
 export default App;
