@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.css';
 // import {Button} from 'antd'
-import video from '../../media/video.mp4'
+import video2 from '../../media/video2.mp4'
 import img1 from '../../media/img1.jpeg'
 import img2 from '../../media/img2.jpeg'
 import img3 from '../../media/img3.png'
@@ -11,9 +11,9 @@ import img6 from '../../media/img6.png'
 
 const Main = () => {
     return (
-        <div>
+        <div className='container'>
             {/* <div> */}
-                <video className='main-video' autoPlay muted loop src={video}/>
+                <video className='main-video' autoPlay muted loop src={video2}/>
             {/* </div> */}
             <div className='main-section-2'>
                 <h4 className='main-title'>NIKELAND ON ROBLOX</h4>
@@ -22,15 +22,15 @@ const Main = () => {
                     <button className='btn btn-2'>Shop Kids'</button>
                 </div>
             </div>
-            <p className='p2'>Discover Our Apps</p>
-            <div className='main-img' >
+            <p className='p2 container'>Discover Our Apps</p>
+            <div className='main-img container' >
                 <img src={img1} />
                 <img src={img2} />
             </div>
-            <p className='p2'>Join Us</p>
-            <img id="img3" style={{width:"98%"}} src={img3}/>
-            <p className='p2'>More Nike</p>
-            <div className='main-img2'>
+            <p className='p2' style={{marginTop:"30px"}}>Join Us</p>
+            <img id="img3" style={{width:"100%"}} src={img3}/>
+            <p style={{marginTop:"30px"}} className='p2 container'>More Nike</p>
+            <div className='main-img2 container'>
                 <img src={img4} />
                 <img src={img5} />
                 <img src={img6} />

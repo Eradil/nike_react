@@ -2,13 +2,13 @@ import { HeartOutlined, ShoppingOutlined } from "@ant-design/icons";
 import React from "react";
 // import Navbar from "../Navbar/Navbar";
 import "./Header.css";
-import { Breadcrumb } from "antd";
+import { Breadcrumb} from "antd";
 import Navbar from "../Navbar/Navbar";
 
 const Header = () => {
   return (
     <header>
-      <div className="header_top_bg">
+       <div className="header_top_bg">
         <div className="header_top container" id="no-padding-burger">
           <svg
             className="jordan"
@@ -20,9 +20,9 @@ const Header = () => {
           </svg>
           <div></div>
           <Breadcrumb className="breadCrumbs">
-            <Breadcrumb.Item>Help</Breadcrumb.Item>
-            <Breadcrumb.Item>Join us</Breadcrumb.Item>
-            <Breadcrumb.Item>Sign In</Breadcrumb.Item>
+            <a style={{marginRight:"15px"}} href="/auth">Sign in</a>
+            /
+            <a style={{marginLeft:"15px"}} href="/register">Sign up</a>
           </Breadcrumb>
         </div>
       </div>
