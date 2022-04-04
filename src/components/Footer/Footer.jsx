@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./Footer.css";
 import twitter from "../../media/twitter.png";
@@ -39,10 +38,30 @@ const Footer = () => {
         </div>
         <div></div>
         <div className="footer-logos footer-card">
-          <img className="sl" style={{ width: "30px" }} src={twitter} />
-          <img className="sl" style={{ width: "30px" }} src={facebook} />
-          <img className="sl" style={{ width: "30px" }} src={youtube} />
-          <img className="sl" style={{ width: "30px" }} src={instagram} />
+          <img
+            alt="logos"
+            className="sl"
+            style={{ width: "30px" }}
+            src={twitter}
+          />
+          <img
+            alt="logos"
+            className="sl"
+            style={{ width: "30px" }}
+            src={facebook}
+          />
+          <img
+            alt="logos"
+            className="sl"
+            style={{ width: "30px" }}
+            src={youtube}
+          />
+          <img
+            alt="logos"
+            className="sl"
+            style={{ width: "30px" }}
+            src={instagram}
+          />
         </div>
       </div>
       <div className="footer-second">

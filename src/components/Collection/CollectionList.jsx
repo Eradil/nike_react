@@ -1,23 +1,23 @@
+// import { Empty } from "antd";
 import {
-  DeleteOutlined,
-  EditOutlined,
   EllipsisOutlined,
+  HeartOutlined,
+  ShoppingCartOutlined,
 } from "@ant-design/icons";
-import { Card, Tooltip } from "antd";
+import { Card, Carousel, Tooltip } from "antd";
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { contextProducts } from "../../context/contextProducts";
-import AddProduct from "../AddProduct/Addproduct";
+// import CollectionCard from "./CollectionCard";
 
-const AdminProduct = () => {
-  const { getProducts, products, deleteProduct } = useContext(contextProducts);
+const CollectionList = () => {
+  const { getProducts, products } = useContext(contextProducts);
   useEffect(() => {
     getProducts();
   }, []);
   console.log(products);
   return (
     <div className="container">
-      <AddProduct />
       <div
         style={{
           display: "flex",
@@ -30,21 +30,21 @@ const AdminProduct = () => {
         {products.map((item) => (
           <div key={item.id}>
             <Card
-              style={{ width: 300 }}
-              cover={<img alt="example" src={item.image1} />}
+              hoverable
+              style={{ width: 400, margin: "10px 0" }}
+              cover={
+                <Carousel autoplay>
+                  <img alt="example" src={item.image1} />
+                  <img alt="example" src={item.image2} />
+                </Carousel>
+              }
               actions={[
-                <Tooltip placement="topLeft" title="Delete">
-                  <DeleteOutlined
-                    onClick={() => deleteProduct(item.id)}
-                    key="setting"
-                  />
+                <Tooltip placement="topLeft" title="Добавить в избранное">
+                  <HeartOutlined />
                 </Tooltip>,
-                <Tooltip placement="topLeft" title="Edit">
-                  <Link
-                    style={{ borderBottom: "1px solid white" }}
-                    to={`/edit/${item.id}`}
-                  >
-                    <EditOutlined key="edit" />
+                <Tooltip placement="topLeft" title="Добавить в корзину ">
+                  <Link to={"#"} style={{ borderBottom: "1px solid white" }}>
+                    <ShoppingCartOutlined />
                   </Link>
                 </Tooltip>,
                 <Tooltip placement="topLeft" title="Details">
@@ -67,4 +67,4 @@ const AdminProduct = () => {
   );
 };
 
-export default AdminProduct;
+export default CollectionList;
