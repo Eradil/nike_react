@@ -12,29 +12,6 @@ import "./Navbar.css";
 
 class App extends React.Component {
   render() {
-    // const NAV_ITEMS = [
-    //   {
-    //     title: "Main",
-    //     link: "/main",
-    //     id: 1,
-    //   },
-    //   {
-    //     title: "Stores",
-    //     link: "/stores",
-    //     id: 2,
-    //   },
-    //   {
-    //     title: "Collection",
-    //     link: "/collection",
-    //     id: 3,
-    //   },
-    //   {
-    //     title: "Contact",
-    //     link: "/contact",
-    //     id: 4,
-    //   },
-    // ];
-
     return (
       <Menu
         style={{
@@ -45,7 +22,7 @@ class App extends React.Component {
         }}
         mode="horizontal"
       >
-        <Link to={"/main"}>
+        <Link to={"/"}>
           <Menu.Item style={{ color: "black" }} icon={<HomeOutlined />}>
             Main
           </Menu.Item>

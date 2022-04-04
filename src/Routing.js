@@ -1,24 +1,22 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import CollectionList from "./components/Collection/CollectionList";
 
-import AdminProduct from "./components/AdminProduct/AdminProduct";
-import Collection from "./components/Collection/Collection";
+import CollectionList from "./components/Collection/CollectionList";
 import Contact from "./components/Contact/Contact";
+import Details from "./components/Details/Details";
+import EditProduct from "./components/EditProduct/EditProduct";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
+
 import Main from "./components/Main/Main";
 import Stores from "./components/Stores/Stores";
+import AdminPages from "./pages/AdminPages";
 
 const Routing = () => {
   let PUBLIC_ROUTE = [
     {
       link: "/",
-      element: <Home />,
-      id: 1,
-    },
-    {
-      link: "/main",
       element: <Main />,
       id: 2,
     },
@@ -29,7 +27,7 @@ const Routing = () => {
     },
     {
       link: "/collection",
-      element: <Collection />,
+      element: <CollectionList />,
       id: 4,
     },
     {
@@ -37,12 +35,22 @@ const Routing = () => {
       element: <Contact />,
       id: 5,
     },
+    {
+      link: "/collection/:id",
+      element: <Details />,
+      id: 6,
+    },
   ];
   let ADMIN_ROUTE = [
     {
       link: "/admin",
-      element: <AdminProduct />,
+      element: <AdminPages />,
       id: 1,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProduct />,
+      id: 2,
     },
   ];
 
