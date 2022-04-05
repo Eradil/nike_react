@@ -2,8 +2,9 @@ import { HeartOutlined, ShoppingOutlined } from "@ant-design/icons";
 import React from "react";
 // import Navbar from "../Navbar/Navbar";
 import "./Header.css";
-import { Breadcrumb } from "antd";
+import { Badge, Breadcrumb } from "antd";
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -20,9 +21,9 @@ const Header = () => {
           </svg>
           <div></div>
           <Breadcrumb className="breadCrumbs">
-            <Breadcrumb.Item>Help</Breadcrumb.Item>
-            <Breadcrumb.Item>Join us</Breadcrumb.Item>
-            <Breadcrumb.Item>Sign In</Breadcrumb.Item>
+            <a style={{marginRight:"15px"}} href="/auth">Sign in</a>
+            /
+            <a style={{marginLeft:"15px"}} href="/register">Sign up</a>
           </Breadcrumb>
         </div>
       </div>
@@ -42,7 +43,12 @@ const Header = () => {
 
         <div className="header_icons">
           <HeartOutlined />
-          <ShoppingOutlined />
+          <Link to='/cart'>
+            {/* <Badge count={+cartLenght}> */}
+              <ShoppingOutlined />
+            {/* </Badge> */}
+          </Link>
+            
         </div>
       </div>
       <div className="header_bottom_2"></div>

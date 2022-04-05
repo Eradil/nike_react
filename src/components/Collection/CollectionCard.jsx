@@ -3,24 +3,41 @@ import {
   HeartOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
-import { Card, Tooltip } from "antd";
-import React from "react";
+import { Card, Carousel, Tooltip } from "antd";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { cartContext } from "../../context/cartContext";
 
 const CollectionCard = ({ item }) => {
+  const { addProductToCart, checkItemInCart } = useContext(cartContext);
+  const [checkItem, setCheckItem] = useState(checkItemInCart(item.id));
   return (
     <div>
       <Card
-        style={{ width: 300 }}
-        cover={<img alt="example" src={item.image1} />}
+        hoverable
+        style={{ width: 400, margin: "10px 0" }}
+        cover={
+          <Carousel autoplay>
+            <img alt="example" src={item.image1} />
+            <img alt="example" src={item.image2} />
+            <img alt="example" src={item.image3} />
+            <img alt="example" src={item.image4} />
+            <img alt="example" src={item.image5} />
+          </Carousel>
+        }
         actions={[
           <Tooltip placement="topLeft" title="Добавить в избранное">
-            <HeartOutlined key="setting" />
+            <HeartOutlined />
           </Tooltip>,
-          <Tooltip placement="topLeft" title="Добавить в корзину">
-            <Link style={{ borderBottom: "1px solid white" }}>
-              <ShoppingCartOutlined />
-            </Link>
+          <Tooltip placement="topLeft" title="Добавить в корзину ">
+            {/* <Link to={"#"} style={{ borderBottom: "1px solid white" }}> */}
+            <ShoppingCartOutlined
+              onClick={() => {
+                addProductToCart(item);
+                setCheckItem(checkItemInCart(item.id));
+              }}
+            />
+            {/* </Link> */}
           </Tooltip>,
           <Tooltip placement="topLeft" title="Details">
             <Link
@@ -35,6 +52,7 @@ const CollectionCard = ({ item }) => {
         <p>{item.model}</p>
         <p>{item.price}$</p>
       </Card>
+      
     </div>
   );
 };

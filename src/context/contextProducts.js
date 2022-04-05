@@ -37,8 +37,8 @@ const ContextProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   async function getProducts() {
-    let result = await axios(API);
-    console.log(result);
+    let result = await axios(`${API}${window.location.search}`);
+    console.log(result,'res');
     dispatch({
       type: CASE_GET_PRODUCTS,
       payload: result,
