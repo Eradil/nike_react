@@ -2,9 +2,11 @@ import { Button } from "antd";
 import React, { useState } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
+import { useNavigate } from "react-router-dom";
 import "./MyCard.css";
 
 const MyCards = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     cvc: "",
     expiry: "",
@@ -54,7 +56,12 @@ const MyCards = () => {
               placeholder="Card Number"
               onChange={handleInputChange}
             />
-            <Button style={{ margin: "20px 0" }}>Оформить заказ</Button>
+            <Button
+              onClick={() => navigate("/success")}
+              style={{ margin: "20px 0" }}
+            >
+              Оформить заказ
+            </Button>
           </form>
         </div>
       </div>

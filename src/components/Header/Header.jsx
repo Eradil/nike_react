@@ -2,7 +2,7 @@ import { HeartOutlined, ShoppingOutlined } from "@ant-design/icons";
 import "./Header.css";
 import Navbar from "../Navbar/Navbar";
 import { Button } from "antd";
-import fire from "../../fire";
+// import fire from "../../fire";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../context/authContext";
@@ -44,7 +44,7 @@ const Header = () => {
       <div className="header_bottom">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="pre-logo-svg"
+          className="pre-logo-svg"
           fill="currentColor"
           viewBox="0 0 69 32"
         >

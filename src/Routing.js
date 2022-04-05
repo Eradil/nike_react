@@ -13,11 +13,12 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import MyCards from "./components/MyCard/MyCard";
 import Stores from "./components/Stores/Stores";
+import Success from "./components/Success/Success";
 import { authContext } from "./context/authContext";
 import AdminPages from "./pages/AdminPages";
 import Error404 from "./pages/Error404";
 
-let ADMIN = "121212@gmail.com";
+let ADMIN = "1212@gmail.com";
 
 const Routing = () => {
   let PUBLIC_ROUTE = [
@@ -54,6 +55,11 @@ const Routing = () => {
     {
       link: "/credit",
       element: <MyCards />,
+      id: 7,
+    },
+    {
+      link: "/success",
+      element: <Success />,
       id: 7,
     },
   ];

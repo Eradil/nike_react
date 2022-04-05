@@ -79,7 +79,7 @@ const Stores = () => {
           }}
         >
           {STORES.map((item) => (
-            <div>
+            <div key={item.id}>
               <Image width={300} src={item.image} />
               <p style={{ textAlign: "center" }}>{item.location}</p>
             </div>
