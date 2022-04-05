@@ -1,5 +1,6 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Auth from "./components/Auth/Auth";
 // import CollectionList from "./components/Collection/CollectionList";
 
 import CollectionList from "./components/Collection/CollectionList";
@@ -10,8 +11,13 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
 import Main from "./components/Main/Main";
+import MyCards from "./components/MyCard/MyCard";
 import Stores from "./components/Stores/Stores";
+import { authContext } from "./context/authContext";
 import AdminPages from "./pages/AdminPages";
+import Error404 from "./pages/Error404";
+
+let ADMIN = "121212@gmail.com";
 
 const Routing = () => {
   let PUBLIC_ROUTE = [
@@ -40,6 +46,16 @@ const Routing = () => {
       element: <Details />,
       id: 6,
     },
+    {
+      link: "/auth",
+      element: <Auth />,
+      id: 7,
+    },
+    {
+      link: "/credit",
+      element: <MyCards />,
+      id: 7,
+    },
   ];
   let ADMIN_ROUTE = [
     {
@@ -53,7 +69,7 @@ const Routing = () => {
       id: 2,
     },
   ];
-
+  const { currentUser } = useContext(authContext);
   return (
     <div>
       <BrowserRouter>
@@ -63,8 +79,19 @@ const Routing = () => {
             <Route key={item.id} path={item.link} element={item.element} />
           ))}
           {ADMIN_ROUTE.map((item) => (
-            <Route key={item.id} path={item.link} element={item.element} />
+            <Route
+              key={item.id}
+              path={item.link}
+              element={
+                currentUser === ADMIN ? (
+                  item.element
+                ) : (
+                  <Navigate replace to="*" />
+                )
+              }
+            />
           ))}
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
       </BrowserRouter>
