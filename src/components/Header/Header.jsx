@@ -6,6 +6,8 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../context/authContext";
+import { Badge, Breadcrumb } from "antd";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { currentUser, handleLogout } = useContext(authContext);
@@ -54,8 +56,12 @@ const Header = () => {
         <Navbar />
 
         <div className="header_icons">
-          <HeartOutlined className="heart" />
-          <ShoppingOutlined className="cart" />
+          <HeartOutlined />
+          <Link to="/cart">
+            {/* <Badge count={+cartLenght}> */}
+            <ShoppingOutlined />
+            {/* </Badge> */}
+          </Link>
         </div>
       </div>
       <div className="header_bottom_2"></div>
