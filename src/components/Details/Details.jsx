@@ -1,4 +1,4 @@
-import { Carousel, Col, Row } from "antd";
+import { Button, Carousel, Col, Row } from "antd";
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { contextProducts } from "../../context/contextProducts";
@@ -27,6 +27,7 @@ const Details = () => {
             <h3>{oneProduct.price}$</h3>
             <h3>{oneProduct.description}</h3>
           </div>
+          <Button>Добавить в корзину</Button>
         </Col>
       </Row>
     </div>
