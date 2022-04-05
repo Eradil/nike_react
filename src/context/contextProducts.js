@@ -14,14 +14,17 @@ let API = "http://localhost:8001/products";
 const INIT_STATE = {
   products: [],
   oneProduct: null,
+  productsCount: 0,
 };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case CASE_GET_PRODUCTS:
+      console.log(action);
       return {
         ...state,
         products: action.payload.data,
+        productsCount: action.payload.headers["x-total-count"],
       };
     case CASE_GET_ONE_PRODUCT:
       return {
@@ -37,7 +40,7 @@ const ContextProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   async function getProducts() {
-    let result = await axios(API);
+    let result = await axios(API + window.location.search);
     console.log(result);
     dispatch({
       type: CASE_GET_PRODUCTS,
@@ -71,6 +74,7 @@ const ContextProductsProvider = ({ children }) => {
         value={{
           products: state.products,
           oneProduct: state.oneProduct,
+          productsCount: state.productsCount,
           getProducts,
           deleteProduct,
           createProduct,
