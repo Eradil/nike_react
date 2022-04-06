@@ -9,15 +9,15 @@ import AuthContextProvider from "./context/authContext";
 import FavoriteContextProvider from "./context/favoriteContext";
 const App = () => {
   return (
-    <AuthContextProvider>
-      <ContextProductsProvider>
-        <CartContextProvider>
-          <FavoriteContextProvider>
+    <FavoriteContextProvider>
+      <AuthContextProvider>
+        <ContextProductsProvider>
+          <CartContextProvider>
             <Routing />
-          </FavoriteContextProvider>
-        </CartContextProvider>
-      </ContextProductsProvider>
-    </AuthContextProvider>
+          </CartContextProvider>
+        </ContextProductsProvider>
+      </AuthContextProvider>
+    </FavoriteContextProvider>
   );
 };
 

@@ -6,15 +6,15 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../context/authContext";
-import { Badge} from "antd";
+import { Badge } from "antd";
 import { Link } from "react-router-dom";
 import { cartContext } from "../../context/cartContext";
 import { favoriteContext } from "../../context/favoriteContext";
 
 const Header = () => {
   const { currentUser, handleLogout } = useContext(authContext);
-  const {cartLength} = useContext(cartContext)
-  const {favoriteLength} = useContext(favoriteContext)
+  const { cartLength } = useContext(cartContext);
+  const { favoriteLength } = useContext(favoriteContext);
   const navigate = useNavigate();
   return (
     <header>
@@ -30,11 +30,7 @@ const Header = () => {
           </svg>
           <div></div>
 
-          {/* <Button>LogIn</Button>
-          <Button onClick={() => fire.auth().signOut()}>SignOut</Button> */}
-          <div
-          // style={{ display: "flex", justifyContent: "flex-end" }}
-          >
+          <div>
             {currentUser ? (
               <span>
                 {currentUser}
@@ -62,13 +58,13 @@ const Header = () => {
         <div className="header_icons">
           <Link className="bigLogoToHide" to="/favorite">
             <Badge count={+favoriteLength}>
-               <HeartOutlined style={{fontSize: "30px",color: "black",}} />
+              <HeartOutlined style={{ fontSize: "30px", color: "black" }} />
             </Badge>
           </Link>
 
           <Link className="bigLogoToHide" to="/cart">
             <Badge count={+cartLength}>
-               <ShoppingOutlined style={{fontSize: "30px",color: "black",}} />
+              <ShoppingOutlined style={{ fontSize: "30px", color: "black" }} />
             </Badge>
           </Link>
         </div>

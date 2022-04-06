@@ -21,6 +21,7 @@ const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case CASE_GET_PRODUCTS:
       console.log(action);
+
       return {
         ...state,
         products: action.payload.data,
@@ -67,6 +68,10 @@ const ContextProductsProvider = ({ children }) => {
     await axios.patch(`${API}/${id}`, editedProduct);
     getProducts();
   }
+  async function addComment(id, comments) {
+    await axios.patch(`${API}/${id}`, { comments: comments });
+    getOneProduct(id);
+  }
 
   return (
     <div>
@@ -80,6 +85,7 @@ const ContextProductsProvider = ({ children }) => {
           createProduct,
           getOneProduct,
           editProduct,
+          addComment,
         }}
       >
         {children}

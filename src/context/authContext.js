@@ -1,25 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import fire from "../fire";
-
-// export const authContext = React.createContext();
-
-// const AuthContextProvider = ({ children }) => {
-//   const [currentUser, setCurrentUser] = useState(null);
-//   useEffect(() => {
-//     fire.auth().onAuthStateChanged(setCurrentUser);
-//   }, []);
-//   return (
-//     <authContext.Provider
-//       value={{
-//         currentUser,
-//       }}
-//     >
-//       {children}
-//     </authContext.Provider>
-//   );
-// };
-
-// export default AuthContextProvider;
 import fire from "../fire";
 import React, { useEffect, useState } from "react";
 
