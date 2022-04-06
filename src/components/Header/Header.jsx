@@ -6,7 +6,6 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../context/authContext";
-import { Badge, Breadcrumb } from "antd";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -26,11 +25,7 @@ const Header = () => {
           </svg>
           <div></div>
 
-          {/* <Button>LogIn</Button>
-          <Button onClick={() => fire.auth().signOut()}>SignOut</Button> */}
-          <div
-          // style={{ display: "flex", justifyContent: "flex-end" }}
-          >
+          <div>
             {currentUser ? (
               <span>
                 {currentUser}
@@ -58,9 +53,7 @@ const Header = () => {
         <div className="header_icons">
           <HeartOutlined />
           <Link to="/cart">
-            {/* <Badge count={+cartLenght}> */}
             <ShoppingOutlined />
-            {/* </Badge> */}
           </Link>
         </div>
       </div>

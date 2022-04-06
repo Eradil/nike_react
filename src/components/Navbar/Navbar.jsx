@@ -1,10 +1,12 @@
 import { Menu } from "antd";
 import {
+  HeartOutlined,
   HomeOutlined,
   LockOutlined,
   PhoneOutlined,
   ShopOutlined,
   ShoppingCartOutlined,
+  ShoppingOutlined,
 } from "@ant-design/icons";
 import React from "react";
 import { Link } from "react-router-dom";

@@ -6,15 +6,18 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import ContextProductsProvider from "./context/contextProducts";
 import CartContextProvider from "./context/cartContext";
 import AuthContextProvider from "./context/authContext";
+import CommentContextProvider from "./context/commentContext";
 const App = () => {
   return (
-    <AuthContextProvider>
-      <ContextProductsProvider>
-        <CartContextProvider>
-          <Routing />
-        </CartContextProvider>
-      </ContextProductsProvider>
-    </AuthContextProvider>
+    <CommentContextProvider>
+      <AuthContextProvider>
+        <ContextProductsProvider>
+          <CartContextProvider>
+            <Routing />
+          </CartContextProvider>
+        </ContextProductsProvider>
+      </AuthContextProvider>
+    </CommentContextProvider>
   );
 };
 

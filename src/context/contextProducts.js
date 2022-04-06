@@ -21,6 +21,7 @@ const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case CASE_GET_PRODUCTS:
       console.log(action);
+
       return {
         ...state,
         products: action.payload.data,

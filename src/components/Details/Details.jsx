@@ -1,11 +1,12 @@
-import { Button, Carousel, Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { authContext } from "../../context/authContext";
 import { contextProducts } from "../../context/contextProducts";
-// import { data } from "../../helpers/data";
 
 const Details = () => {
   const { getOneProduct, oneProduct } = useContext(contextProducts);
+  const { currentUser } = useContext(authContext);
   const params = useParams();
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Details = () => {
       <Row style={{ alignItems: "center", display: "flex" }}>
         <Col span={12} style={{ margin: "20px 0" }}>
           <div>
-            <img width={"400px"} src={oneProduct.image1} alt="image" />
+            <img width={"400px"} src={oneProduct.image1} alt="img" />
           </div>
         </Col>
         <Col span={12} style={{ margin: "20px 0" }}>

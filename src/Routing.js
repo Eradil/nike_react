@@ -21,7 +21,7 @@ import { authContext } from "./context/authContext";
 import AdminPages from "./pages/AdminPages";
 import Error404 from "./pages/Error404";
 
-let ADMIN = "1212@gmail.com";
+let ADMIN = "1@gmail.com";
 
 const Routing = () => {
   let PUBLIC_ROUTE = [
@@ -64,6 +64,8 @@ const Routing = () => {
       link: "/success",
       element: <Success />,
       id: 7,
+    },
+    {
       link: "/cart",
       element: <Cart />,
       id: 7,
