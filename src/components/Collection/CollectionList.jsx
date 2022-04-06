@@ -1,19 +1,8 @@
-// import { Empty } from "antd";
-// import {
-//   EllipsisOutlined,
-//   HeartOutlined,
-//   ShoppingCartOutlined,
-// } from "@ant-design/icons";
-import {
-  // Card, Carousel, Empty,Tooltip
-  Input,
-  Pagination,
-} from "antd";
+import { Input, Pagination } from "antd";
 import React, { useContext, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { contextProducts } from "../../context/contextProducts";
 import Filters from "../Filters/Filters";
-// import video3 from "../../media/video3.mp4";
 import CollectionCard from "./CollectionCard";
 
 const CollectionList = () => {
@@ -22,33 +11,17 @@ const CollectionList = () => {
   const [searchValue, setSearchValue] = useState(
     searchParams.get("q") ? searchParams.get("q") : ""
   );
-  // const [page, setPage] = useState(
-  //   searchParams.get("_page") ? searchParams.get("_page") : 1
-  // );
-  // const [limit, setLimit] = useState(
-  //   searchParams.get("_limit") ? searchParams.get("_limit") : 4
-  // );
-
   const [model, setModel] = useState([]);
   const [price, setPrice] = useState([1, 1000]);
-  const [page, setPage] = useState(
-    searchParams.get("_page") ? searchParams.get("_page") : 1
-  );
 
-  const [limit, setLimit] = useState(20);
-  useEffect(() => {
-    setSearchParams({
-      q: searchValue,
-      _page: page,
-      _limit: limit,
-      model: model,
-      price_gte: price[0],
-      price_lte: price[1],
-    });
-  }, []);
+  const [limit, setLimit] = useState(6);
+  const [page, setPage] = useState(1);
+
+  //
   useEffect(() => {
     getProducts();
-  }, [searchParams]);
+  }, []);
+
   useEffect(() => {
     setSearchParams({
       q: searchValue,
@@ -61,37 +34,29 @@ const CollectionList = () => {
   }, [searchValue, model, price, page, limit]);
   console.log(products);
   useEffect(() => {
-    setSearchParams({
-      q: searchValue,
-      _page: page,
-      _limit: limit,
-    });
-  }, [searchValue, page, limit]);
-  useEffect(() => {
     getProducts();
   }, [searchParams]);
 
-  console.log(products, productsCount);
+  // console.log(products, productsCount);
 
   return (
     <div className="container">
-      <div style={{display:"flex"}}>
+      <div style={{ display: "flex" }}>
         {/* <video className="main-video" autoPlay muted loop src={video3} /> */}
         <Input.Search
           placeholder="Search..."
-          style={{ width: "25vw", marginTop:"30px" }}
+          style={{ width: "25vw", marginTop: "30px" }}
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <Filters
-        model={model}
-        setModel={setModel}
-        price={price}
-        setPrice={setPrice}
-      />
+          model={model}
+          setModel={setModel}
+          price={price}
+          setPrice={setPrice}
+        />
       </div>
 
-      
       <div
         style={{
           display: "flex",
