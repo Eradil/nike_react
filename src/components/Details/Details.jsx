@@ -1,10 +1,11 @@
-import { Button, Carousel, Col, Row } from "antd";
-import React, { useContext, useEffect } from "react";
+import { Button, Col, Row } from "antd";
+import React, { useContext, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { contextProducts } from "../../context/contextProducts";
 // import { data } from "../../helpers/data";
 
 const Details = () => {
+
   const { getOneProduct, oneProduct } = useContext(contextProducts);
   const params = useParams();
 
@@ -14,6 +15,7 @@ const Details = () => {
   // console.log(oneProduct);
 
   return oneProduct ? (
+    
     <div className="container">
       <Row style={{ alignItems: "center", display: "flex" }}>
         <Col span={12} style={{ margin: "20px 0" }}>
@@ -27,7 +29,7 @@ const Details = () => {
             <h3>{oneProduct.price}$</h3>
             <h3>{oneProduct.description}</h3>
           </div>
-          <Button>Добавить в корзину</Button>
+          <Button >Добавить в корзину</Button>
         </Col>
       </Row>
     </div>

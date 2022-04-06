@@ -46,3 +46,9 @@ a {
   border-radius: 50%;
   transition: 0.3s;
 }
+
+@media all and (max-width: 425px){
+  .bigLogoToHide {
+    display: none;
+  }
+}

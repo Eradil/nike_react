@@ -101,12 +101,12 @@ const Auth = () => {
             {isLoginForm ? (
               <>
                 Or{" "}
-                <span onClick={() => setIsLoginForm(false)}>register now!</span>
+                <a onClick={() => setIsLoginForm(false)}>register now!</a>
               </>
             ) : (
               <>
                 Have an account?{" "}
-                <span onClick={() => setIsLoginForm(true)}>Log in</span>
+                <a onClick={() => setIsLoginForm(true)}>Log in</a>
               </>
             )}
           </Form.Item>

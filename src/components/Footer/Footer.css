@@ -56,3 +56,37 @@ p{
         flex-wrap: wrap;
     }
 }
+
+@media all and (max-width: 425px){
+    .footer-main {
+      flex-wrap: wrap;
+    }
+    .footer-second{
+        display: none;
+    }
+  }
+
+  /* @media all and (max-width: 320px){
+    .footer {
+        margin-top: 5px;
+    }
+    .footer-main{
+        margin-top: 20px;
+    }
+  } */
+  @media all and (max-width: 425px){
+    .footer {
+        margin-top: 5px;
+    }
+    .footer-main{
+        margin-top: 20px;
+    }
+  }
+  @media all and (max-width: 768px){
+    .footer {
+        margin-top: 5px;
+    }
+    .footer-main{
+        margin-top: 60px;
+    }
+  }

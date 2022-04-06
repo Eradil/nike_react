@@ -5,3 +5,14 @@ a {
 a:hover {
   border-bottom: 1px solid #111;
 }
+
+@media all and (max-width: 426px){
+  .logoToHide {
+    display: block;
+  }
+}
+@media all and (min-width: 768px){
+  .logoToHide {
+    display: none;
+  }
+}

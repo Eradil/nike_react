@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Auth from "./components/Auth/Auth";
+
+import Cart from "./components/Cart/Cart";
 // import CollectionList from "./components/Collection/CollectionList";
 
 import CollectionList from "./components/Collection/CollectionList";
 import Contact from "./components/Contact/Contact";
 import Details from "./components/Details/Details";
 import EditProduct from "./components/EditProduct/EditProduct";
+import Favorite from "./components/Favorite/Favorite";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
@@ -55,12 +58,19 @@ const Routing = () => {
     {
       link: "/credit",
       element: <MyCards />,
-      id: 7,
+      id: 8,
     },
     {
       link: "/success",
       element: <Success />,
-      id: 7,
+      link: "/cart",
+      element: <Cart />,
+      id: 9,
+    },
+    {
+      link: "/favorite",
+      element: <Favorite />,
+      id: 10,
     },
   ];
   let ADMIN_ROUTE = [
