@@ -11,7 +11,7 @@ import img6 from '../../media/img6.png'
 
 const Main = () => {
     return (
-        <div className='container'>
+        <div className='main-page container'>
             {/* <div> */}
                 <video className='main-video' autoPlay muted loop src={video2}/>
             {/* </div> */}

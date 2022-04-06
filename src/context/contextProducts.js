@@ -68,6 +68,10 @@ const ContextProductsProvider = ({ children }) => {
     await axios.patch(`${API}/${id}`, editedProduct);
     getProducts();
   }
+  async function addComment(id, comments) {
+    await axios.patch(`${API}/${id}`, { comments: comments });
+    getOneProduct(id);
+  }
 
   return (
     <div>
@@ -81,6 +85,7 @@ const ContextProductsProvider = ({ children }) => {
           createProduct,
           getOneProduct,
           editProduct,
+          addComment,
         }}
       >
         {children}

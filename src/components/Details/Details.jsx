@@ -1,18 +1,17 @@
 import { Button, Col, Row } from "antd";
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { authContext } from "../../context/authContext";
+// import { authContext } from "../../context/authContext";
 import { contextProducts } from "../../context/contextProducts";
 
 const Details = () => {
   const { getOneProduct, oneProduct } = useContext(contextProducts);
-  const { currentUser } = useContext(authContext);
   const params = useParams();
 
   useEffect(() => {
     getOneProduct(params.id);
   }, []);
-  // console.log(oneProduct);
+  // console.log(comment);
 
   return oneProduct ? (
     <div className="container">

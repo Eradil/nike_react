@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { contextProducts } from "../../context/contextProducts";
 import Filters from "../Filters/Filters";
-import video3 from "../../media/video3.mp4";
 import CollectionCard from "./CollectionCard";
 
 const CollectionList = () => {
@@ -12,12 +11,12 @@ const CollectionList = () => {
   const [searchValue, setSearchValue] = useState(
     searchParams.get("q") ? searchParams.get("q") : ""
   );
-  const [limit, setLimit] = useState(6);
-  const [page, setPage] = useState(
-    searchParams.get("_page") ? searchParams.get("_page") : 1
-  );
   const [model, setModel] = useState([]);
   const [price, setPrice] = useState([1, 1000]);
+
+  const [limit, setLimit] = useState(6);
+  const [page, setPage] = useState(1);
+
   //
   useEffect(() => {
     getProducts();
@@ -42,11 +41,11 @@ const CollectionList = () => {
 
   return (
     <div className="container">
-      <video className="main-video" autoPlay muted loop src={video3} />
-      <div>
+      <div style={{ display: "flex" }}>
+        {/* <video className="main-video" autoPlay muted loop src={video3} /> */}
         <Input.Search
           placeholder="Search..."
-          style={{ width: "25vw" }}
+          style={{ width: "25vw", marginTop: "30px" }}
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />

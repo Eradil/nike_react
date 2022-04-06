@@ -6,8 +6,12 @@ import { data } from "../../helpers/data";
 const AddProduct = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const { createProduct } = useContext(contextProducts);
+
   function save(newProduct) {
-    createProduct(newProduct);
+    createProduct({
+      ...newProduct,
+      comment: [],
+    });
     setIsModalVisible(false);
   }
 
