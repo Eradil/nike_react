@@ -21,7 +21,7 @@ import { authContext } from "./context/authContext";
 import AdminPages from "./pages/AdminPages";
 import Error404 from "./pages/Error404";
 
-let ADMIN = "1@gmail.com";
+let ADMIN = "2@gmail.com";
 
 const Routing = () => {
   let PUBLIC_ROUTE = [

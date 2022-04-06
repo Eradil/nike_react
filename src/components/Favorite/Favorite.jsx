@@ -13,6 +13,7 @@ const Favorite = () => {
   return (
     <div className="container">
       <div style={{ display: "flex" }}>
+
         <div>
           <List
             itemLayout="vertical"
@@ -38,6 +39,7 @@ const Favorite = () => {
                   Remove from favorite
                 </Button>
               </Card>
+
             )}
           />
         </div>
