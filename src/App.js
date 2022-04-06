@@ -6,12 +6,15 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import ContextProductsProvider from "./context/contextProducts";
 import CartContextProvider from "./context/cartContext";
 import AuthContextProvider from "./context/authContext";
+import FavoriteContextProvider from "./context/favoriteContext";
 const App = () => {
   return (
     <AuthContextProvider>
       <ContextProductsProvider>
         <CartContextProvider>
-          <Routing />
+          <FavoriteContextProvider>
+            <Routing />
+          </FavoriteContextProvider>
         </CartContextProvider>
       </ContextProductsProvider>
     </AuthContextProvider>

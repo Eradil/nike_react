@@ -2,14 +2,18 @@ import React from "react";
 import { Select, Slider } from "antd";
 import { nikeCollection } from "../Collection/CollectionDB";
 
+
+
+
 const Filters = ({ model, setModel, price, setPrice }) => {
+    
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div style={{ marginTop: "30px", display:"flex"}}>
       <Select
         value={model}
         onChange={(e) => setModel(e)}
         placeholder="Filter by brand"
-        style={{ width: "100%" }}
+        style={{ width: "25vw", marginLeft:"50px"}}
         allowClear
         mode="multiple"
       >
@@ -19,7 +23,7 @@ const Filters = ({ model, setModel, price, setPrice }) => {
           </Select.Option>
         ))}
       </Select>
-      <Slider
+      <Slider style={{width: "25vw", marginTop:"10px",marginLeft:"50px"}}
         value={price}
         onChange={(e) => setPrice(e)}
         defaultValue={[1, 1000]}
@@ -28,8 +32,8 @@ const Filters = ({ model, setModel, price, setPrice }) => {
         step={10}
         range
       />
+      
     </div>
   );
 };
-
 export default Filters;

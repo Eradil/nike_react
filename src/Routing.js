@@ -58,20 +58,19 @@ const Routing = () => {
     {
       link: "/credit",
       element: <MyCards />,
-      id: 7,
+      id: 8,
     },
     {
       link: "/success",
       element: <Success />,
-      id: 7,
       link: "/cart",
       element: <Cart />,
-      id: 7,
+      id: 9,
     },
     {
       link: "/favorite",
       element: <Favorite />,
-      id: 8,
+      id: 10,
     },
   ];
   let ADMIN_ROUTE = [

@@ -6,11 +6,15 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../context/authContext";
-import { Badge, Breadcrumb } from "antd";
+import { Badge} from "antd";
 import { Link } from "react-router-dom";
+import { cartContext } from "../../context/cartContext";
+import { favoriteContext } from "../../context/favoriteContext";
 
 const Header = () => {
   const { currentUser, handleLogout } = useContext(authContext);
+  const {cartLength} = useContext(cartContext)
+  const {favoriteLength} = useContext(favoriteContext)
   const navigate = useNavigate();
   return (
     <header>
@@ -56,11 +60,16 @@ const Header = () => {
         <Navbar />
 
         <div className="header_icons">
-          <HeartOutlined />
-          <Link to="/cart">
-            {/* <Badge count={+cartLenght}> */}
-            <ShoppingOutlined />
-            {/* </Badge> */}
+          <Link className="bigLogoToHide" to="/favorite">
+            <Badge count={+favoriteLength}>
+               <HeartOutlined style={{fontSize: "30px",color: "black",}} />
+            </Badge>
+          </Link>
+
+          <Link className="bigLogoToHide" to="/cart">
+            <Badge count={+cartLength}>
+               <ShoppingOutlined style={{fontSize: "30px",color: "black",}} />
+            </Badge>
           </Link>
         </div>
       </div>

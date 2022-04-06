@@ -7,10 +7,13 @@ import { Card, Carousel, Tooltip } from "antd";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../../context/cartContext";
+import { favoriteContext } from "../../context/favoriteContext";
 
 const CollectionCard = ({ item }) => {
   const { addProductToCart, checkItemInCart } = useContext(cartContext);
+  const { addProductToFavorite, checkItemInFavorite } = useContext(favoriteContext);
   const [checkItem, setCheckItem] = useState(checkItemInCart(item.id));
+  const [checkItemX, setCheckItemX] = useState(checkItemInFavorite(item.id));
   return (
     <div>
       <Card
@@ -27,11 +30,18 @@ const CollectionCard = ({ item }) => {
         }
         actions={[
           <Tooltip placement="topLeft" title="Добавить в избранное">
-            <HeartOutlined />
+            <HeartOutlined
+            style={{ fontSize: "25px", color: checkItemX ? "red" : "black" }}
+            onClick={() => {
+              addProductToFavorite(item);
+              setCheckItemX(checkItemInFavorite(item.id));
+            }}
+            />
           </Tooltip>,
           <Tooltip placement="topLeft" title="Добавить в корзину ">
             {/* <Link to={"#"} style={{ borderBottom: "1px solid white" }}> */}
             <ShoppingCartOutlined
+            style={{ fontSize: "25px", color: checkItem ? "red" : "black" }}
               onClick={() => {
                 addProductToCart(item);
                 setCheckItem(checkItemInCart(item.id));

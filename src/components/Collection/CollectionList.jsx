@@ -13,7 +13,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { contextProducts } from "../../context/contextProducts";
 import Filters from "../Filters/Filters";
-import video3 from "../../media/video3.mp4";
+// import video3 from "../../media/video3.mp4";
 import CollectionCard from "./CollectionCard";
 
 const CollectionList = () => {
@@ -75,22 +75,23 @@ const CollectionList = () => {
 
   return (
     <div className="container">
-      <div>
+      <div style={{display:"flex"}}>
+        {/* <video className="main-video" autoPlay muted loop src={video3} /> */}
         <Input.Search
           placeholder="Search..."
-          style={{ width: "25vw" }}
+          style={{ width: "25vw", marginTop:"30px" }}
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-      </div>
-      <video className="main-video" autoPlay muted loop src={video3} />
-
-      <Filters
+        <Filters
         model={model}
         setModel={setModel}
         price={price}
         setPrice={setPrice}
       />
+      </div>
+
+      
       <div
         style={{
           display: "flex",

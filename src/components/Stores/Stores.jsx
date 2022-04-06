@@ -1,5 +1,6 @@
 import { Image } from "antd";
 import React from "react";
+import './Stores.css'
 
 const Stores = () => {
   let STORES = [
@@ -54,7 +55,7 @@ const Stores = () => {
   return (
     <>
       <div
-        className="container"
+        className="stores-main container"
         // style={{
         //   dispaly: "flex",
         //   flexWrap: "wrap",

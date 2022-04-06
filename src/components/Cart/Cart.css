@@ -1,0 +1,26 @@
+/* .cart-description{
+    width: 300px;
+} */
+
+/* .cart-cart{
+    display: flex;
+} */
+.cart-imgdes{
+    display: flex;
+}
+.cart-description{
+    width: 300px;
+    margin-left: 35px;
+}
+.cart-sub-price{
+    margin-top: 20px;
+}
+
+#btn-order{
+    /* margin-left: 5px; */
+    background-color: rgb(53, 141, 183);
+    color: white;
+    width: 140px;
+    height: 50px;
+    border-radius: 8px;
+}
