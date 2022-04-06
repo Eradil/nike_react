@@ -12,10 +12,26 @@ const Favorite = () => {
   return (
     <div className="container">
       <div style={{ display: "flex" }}>
-        
+        {/* {favorite.products? favorite.products.map((item)=><Card
+                    hoverable
+                    style={{ width: 400, margin: "10px"}}
+                    cover={
+                      <Carousel autoplay>
+                        <img alt="example" src={item.item.image1} />
+                        <img alt="example" src={item.item.image2} />
+                        <img alt="example" src={item.item.image3} />
+                        <img alt="example" src={item.item.image4} />
+                        <img alt="example" src={item.item.image5} />
+                      </Carousel>
+                    }>
+                        <h3>{item.item.brand}</h3>
+                        <h4>{item.item.model}</h4>
+                        <div>{item.item.description}</div>
+                        <Button onClick={()=>deleteFromFavorite(item.item.id)} >Remove from favorite</Button>
+                </Card> ): null} */}
         <div>
             <List
-                itemLayout="horizontal"
+                itemLayout="vertical"
                 dataSource={favorite.products}
                 renderItem={item => (
                 <Card
