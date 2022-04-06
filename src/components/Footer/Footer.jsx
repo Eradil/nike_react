@@ -74,7 +74,6 @@ const Footer = () => {
           <p className="fs2">Terms of Sale</p>
           <p className="fs2">Company Details</p>
           <p className="fs2">Privacy & Cookie Policy</p>
-          <p className="fs2">Cookie Settings</p>
         </div>
       </div>
     </div>

@@ -1,72 +1,74 @@
-.footer{
-    margin-top: 150px;
-    background-color: rgb(17, 17, 17);
-    color: white;
-    width: 100%;
-
+.footer {
+  margin-top: 150px;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  width: 100%;
 }
 
-.footer-main{
-    margin-top: 50px;
-    margin-left: 30px;
-    margin-right: 30px;
-    display: flex;
-    justify-content: space-between;
+.footer-main {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.footer-card{
-    margin-top: 25px;
+.footer-card {
+  margin-top: 25px;
 }
 
-.sl+.sl{
-    margin-left: 15px;
+.sl + .sl {
+  margin-left: 15px;
 }
 
-.fg{
-    color: rgb(104, 105, 107);
+.fg {
+  color: rgb(104, 105, 107);
 }
 
-p{
-    cursor: pointer;
+p {
+  cursor: pointer;
 }
 
-.footer-second{
-    display: flex;
-    justify-content: space-between;
+.footer-second {
+  display: flex;
+  justify-content: space-between;
 }
 
-.footer-second-1{
-    margin-left: 45px;
-    color: rgb(104, 105, 107);
+.footer-second-1 {
+  margin-left: 45px;
+  color: rgb(104, 105, 107);
 }
 
-.footer-second-2{
-    display: flex;
-    justify-content: space-between;
-    color: rgb(104, 105, 107);
-    margin-right: 45px;
+.footer-second-2 {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(104, 105, 107);
+  margin-right: 45px;
 }
 
-.fs2+.fs2{
-    margin-left: 15px;
+.fs2 + .fs2 {
+  margin-left: 15px;
 }
 
-@media (max-width: 425px){
-    .footer-second{
-        flex-wrap: wrap;
-    }
-}
-
-@media all and (max-width: 425px){
-    .footer-main {
-      flex-wrap: wrap;
-    }
-    .footer-second{
-        display: none;
-    }
+@media (max-width: 425px) {
+  .footer-second {
+    flex-wrap: wrap;
   }
+}
 
-  /* @media all and (max-width: 320px){
+@media all and (max-width: 426px) {
+  .footer-main {
+    flex-wrap: wrap;
+  }
+  .footer-second {
+    display: none;
+  }
+  .footer-logos {
+    display: none;
+  }
+}
+
+/* @media all and (max-width: 320px){
     .footer {
         margin-top: 5px;
     }
@@ -74,19 +76,19 @@ p{
         margin-top: 20px;
     }
   } */
-  @media all and (max-width: 425px){
-    .footer {
-        margin-top: 5px;
-    }
-    .footer-main{
-        margin-top: 20px;
-    }
+@media all and (max-width: 425px) {
+  .footer {
+    margin-top: 5px;
   }
-  @media all and (max-width: 768px){
-    .footer {
-        margin-top: 5px;
-    }
-    .footer-main{
-        margin-top: 60px;
-    }
+  .footer-main {
+    margin-top: 20px;
   }
+}
+@media all and (max-width: 768px) {
+  .footer {
+    margin-top: 5px;
+  }
+  .footer-main {
+    margin-top: 60px;
+  }
+}
