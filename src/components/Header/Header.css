@@ -47,8 +47,11 @@ a {
   transition: 0.3s;
 }
 
-@media all and (max-width: 425px){
+@media all and (max-width: 426px) {
   .bigLogoToHide {
+    display: none;
+  }
+  .header_icons {
     display: none;
   }
 }

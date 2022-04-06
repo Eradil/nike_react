@@ -42,7 +42,6 @@ const CollectionList = () => {
   return (
     <div className="container">
       <div style={{ display: "flex" }}>
-        {/* <video className="main-video" autoPlay muted loop src={video3} /> */}
         <Input.Search
           placeholder="Search..."
           style={{ width: "25vw", marginTop: "30px" }}
